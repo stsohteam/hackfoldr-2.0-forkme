@@ -93,3 +93,26 @@ Or via npm script:
 ```bash
 npm run transcript:diary -- transcript.txt diary.md 2026-02-16
 ```
+
+### One-click run
+
+If your transcript file is named `transcript.txt` in project root:
+
+```bash
+./run-diary.sh
+```
+
+This will output `diary-YYYY-MM-DD.md` automatically.
+
+You can also pass custom paths:
+
+```bash
+./run-diary.sh transcript.txt diary.md 2026-02-16
+```
+
+Or use npm shortcut:
+
+```bash
+npm run transcript:quick -- transcript.txt diary.md 2026-02-16
+```
+
