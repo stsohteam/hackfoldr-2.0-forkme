@@ -64,3 +64,32 @@ To the extent possible under law, the original author [Chia-liang Kao](https://g
 Thanks to all contributors for [Hackfoldr](https://github.com/hackfoldr/hackfoldr/graphs/contributors) and [Hackfoldr 2.0](https://github.com/hackfoldr/hackfoldr-2.0-forkme/graphs/contributors)
 
 This work is published from Taiwan.
+
+## Transcript to Diary CLI
+
+This repository now includes a small CLI utility to turn speech transcripts into a daily journal in Chinese.
+
+### Features
+
+* First-person narrative diary text
+* 24-hour timeline extraction (e.g. `08:30`, `19:45`)
+* Body-condition summary (sleep, food, discomfort, energy, stress)
+* Daily keyword frequency analysis
+
+### Usage
+
+```bash
+node tools/transcript_to_diary.js <input.txt> [output.md] [YYYY-MM-DD]
+```
+
+Example:
+
+```bash
+node tools/transcript_to_diary.js transcript.txt diary.md 2026-02-16
+```
+
+Or via npm script:
+
+```bash
+npm run transcript:diary -- transcript.txt diary.md 2026-02-16
+```
