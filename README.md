@@ -68,23 +68,68 @@ This work is published from Taiwan.
 
 ## 在本地端測試 simple-site.html
 
-如果你想先在本機預覽 `simple-site.html`，可以用以下方式：
+你截圖裡的 `404 File not found`，通常代表「伺服器啟動的資料夾」不是 `simple-site.html` 所在位置。
 
-1. 在專案根目錄啟動本地伺服器：
+### Windows PowerShell（建議照這個順序執行）
+
+1. 先切到專案根目錄（有 `simple-site.html` 的那層）：
+
+```powershell
+cd "D:\使用者\下載\hackfoldr-2.0-forkme-master\hackfoldr-2.0-forkme-master"
+```
+
+2. 確認目前路徑與檔案存在：
+
+```powershell
+Get-Location
+dir simple-site.html
+```
+
+3. 啟動本地伺服器（你原本用的 4175 可以）：
+
+```powershell
+python3 -m http.server 4175
+```
+
+4. 在瀏覽器開啟：
+
+```
+http://localhost:4175/simple-site.html
+```
+
+---
+
+### 如果還是 404，請照下面排查
+
+1. 先開 `http://localhost:4175/` 看目錄清單。  
+   - 如果看不到 `simple-site.html`，表示你不在正確資料夾。
+
+2. 直接指定服務目錄（最穩）：
+
+```powershell
+python3 -m http.server 4175 --directory "D:\使用者\下載\hackfoldr-2.0-forkme-master\hackfoldr-2.0-forkme-master"
+```
+
+3. 再次開啟：
+
+```
+http://localhost:4175/simple-site.html
+```
+
+4. `GET /favicon.ico 404` 可忽略。  
+   這只是瀏覽器自動找網站圖示，不影響頁面本體。
+
+---
+
+### macOS / Linux 參考
 
 ```bash
-python3 -m http.server 4173
+cd /path/to/hackfoldr-2.0-forkme
+python3 -m http.server 4175
+# open http://localhost:4175/simple-site.html
 ```
 
-2. 在瀏覽器開啟：
-
-```
-http://localhost:4173/simple-site.html
-```
-
-3. 修改 `simple-site.html` 後重新整理頁面即可看到變更。
-
-> 小提醒：如果 4173 埠被占用，可以換成其他埠，例如 `python3 -m http.server 8080`，再開 `http://localhost:8080/simple-site.html`。
+> 小提醒：如果埠號被占用，改用 8080：`python3 -m http.server 8080`，網址改成 `http://localhost:8080/simple-site.html`。
 
 ## Transcript to Diary CLI
 
