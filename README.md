@@ -68,6 +68,21 @@ This work is published from Taiwan.
 
 ## 在本地端測試 simple-site.html
 
+### `simple-site.html` 在哪裡？
+
+檔案路徑就在專案根目錄：
+
+- `hackfoldr-2.0-forkme/simple-site.html`
+
+先用下面指令確認（Windows PowerShell）：
+
+```powershell
+Get-Location
+dir .\simple-site.html
+```
+
+若你看到 `找不到路徑`，代表你目前不在專案根目錄，請先 `cd` 到含有 `README.md` 的資料夾再執行一次。
+
 你截圖裡的 `404 File not found`，通常代表「伺服器啟動的資料夾」不是 `simple-site.html` 所在位置。
 
 ### Windows PowerShell（建議照這個順序執行）
