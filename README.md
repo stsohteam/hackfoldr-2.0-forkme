@@ -65,6 +65,27 @@ Thanks to all contributors for [Hackfoldr](https://github.com/hackfoldr/hackfold
 
 This work is published from Taiwan.
 
+
+## 在本地端測試 simple-site.html
+
+如果你想先在本機預覽 `simple-site.html`，可以用以下方式：
+
+1. 在專案根目錄啟動本地伺服器：
+
+```bash
+python3 -m http.server 4173
+```
+
+2. 在瀏覽器開啟：
+
+```
+http://localhost:4173/simple-site.html
+```
+
+3. 修改 `simple-site.html` 後重新整理頁面即可看到變更。
+
+> 小提醒：如果 4173 埠被占用，可以換成其他埠，例如 `python3 -m http.server 8080`，再開 `http://localhost:8080/simple-site.html`。
+
 ## Transcript to Diary CLI
 
 This repository now includes a small CLI utility to turn speech transcripts into a daily journal in Chinese.
