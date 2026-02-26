@@ -85,6 +85,31 @@ Get-Location
 dir simple-site.html
 ```
 
+如果這一步出現你貼的錯誤（`PathNotFound` / 找不到 `simple-site.html`），通常是以下其中一種：
+
+- 你目前所在資料夾不是專案根目錄（常見是多一層 `hackfoldr-2.0-forkme-master (1)`）。
+- 你下載的是舊版 zip，當時還沒有 `simple-site.html`。
+
+可以依序執行：
+
+```powershell
+# 先看目前資料夾有哪些檔案
+dir
+
+# 找出哪一層才有 simple-site.html
+cd .\hackfoldr-2.0-forkme-master
+dir simple-site.html
+```
+
+如果仍找不到，請更新到最新版本後再試：
+
+```powershell
+git pull
+dir simple-site.html
+```
+
+> 若你是直接下載 zip（沒有 git），請重新下載最新專案，或自行建立 `simple-site.html` 後再啟動伺服器。
+
 3. 啟動本地伺服器（你原本用的 4175 可以）：
 
 ```powershell
@@ -181,4 +206,3 @@ Or use npm shortcut:
 ```bash
 npm run transcript:quick -- transcript.txt diary.md 2026-02-16
 ```
-
