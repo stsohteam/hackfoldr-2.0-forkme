@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>簡單網站架構</title>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --border: #e5e7eb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(960px, 92vw);
+      margin: 0 auto;
+    }
+
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover { color: var(--primary); }
+
+    main { padding: 2rem 0 3rem; }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.6rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.6rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.15rem;
+    }
+
+    .link-list {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    .link-list li { margin-bottom: 0.5rem; }
+
+    .link-list a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .link-list a:hover { text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1rem 0 2rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 720px) {
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      nav ul { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="logo">我的網站</div>
+      <nav aria-label="主要導覽">
+        <ul>
+          <li><a href="#home">首頁</a></li>
+          <li><a href="#articles">文章</a></li>
+          <li><a href="#links">常用連結</a></li>
+          <li><a href="#about">關於我</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <h1>簡單網站架構範例</h1>
+      <p>
+        這個頁面提供一個最基本的內容型網站結構：上方導覽列、文字區塊、連結區塊與頁尾。
+        你可以直接替換文字內容，或新增更多卡片區塊。
+      </p>
+    </section>
+
+    <section class="grid" id="articles">
+      <article class="card">
+        <h2>文字內容區</h2>
+        <p>
+          這裡適合放公告、文章摘要、活動說明、或任何靜態資訊。
+          如果要做部落格，可以把每篇文章整理成一個卡片。
+        </p>
+      </article>
+
+      <aside class="card" id="links">
+        <h2>常用連結</h2>
+        <ul class="link-list">
+          <li><a href="https://www.google.com" target="_blank" rel="noopener">Google</a></li>
+          <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN 文件</a></li>
+        </ul>
+      </aside>
+
+      <section class="card" id="about">
+        <h2>關於這個網站</h2>
+        <p>
+          架構重點：
+          <br />1. Header（導覽）
+          <br />2. Main（主要內容與連結）
+          <br />3. Footer（版權/聯絡資訊）
+        </p>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 My Simple Site. All rights reserved.</div>
+  </footer>
+</body>
+</html>
